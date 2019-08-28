@@ -870,7 +870,8 @@ params = CGI.parse(uri.query || "")
 
   def rake_env
     if database_url
-      { "DATABASE_URL" => database_url }
+      # { "DATABASE_URL" => database_url }
+      {}
     else
       {}
     end.merge(user_env_hash)
