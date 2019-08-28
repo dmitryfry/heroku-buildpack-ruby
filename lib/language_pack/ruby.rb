@@ -102,7 +102,7 @@ WARNING
         install_bundler_in_app
         build_bundler("development:test")
         post_bundler
-        create_database_yml
+        # create_database_yml
         install_binaries
         run_assets_precompile_rake_task
       end
@@ -805,7 +805,7 @@ require 'uri'
 begin
   uri = URI.parse(ENV["DATABASE_URL"])
 rescue URI::InvalidURIError
-  # raise "Invalid DATABASE_URL"
+  raise "Invalid DATABASE_URL"
 end
 
 raise "No RACK_ENV or RAILS_ENV found" unless ENV["RAILS_ENV"] || ENV["RACK_ENV"]
